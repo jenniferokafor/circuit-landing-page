@@ -1,0 +1,132 @@
+.home {
+  position: relative;
+}
+
+.hero {
+  width: 100vw;
+  //   height: 100vh;
+  overflow-x: hidden;
+  background-image: url(../assets/homebg.png);
+  background-repeat: none;
+  background-size: contain;
+  display: flex;
+
+  @media screen and (min-width: 1600px) {
+    justify-content: center;
+  }
+}
+
+.hero__Inner {
+  > h1 {
+    font: 500 140px/130px var(--font-family);
+    letter-spacing: -7px;
+    color: #18191c;
+    margin: 200px 0 149px 100px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 1013px;
+  }
+}
+
+.heroBottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 179px;
+  margin-left: 100px;
+  padding-bottom: 10px;
+}
+
+.heroBottom__Left {
+  font: 500 24px/30px var(--font-family);
+  color: #000000;
+  max-width: 358px;
+}
+
+.heroBottom__Right {
+  max-width: 476px;
+  z-index: 10;
+
+  > p {
+    font: 400 18px/28px var(--font-family);
+    color: #000000;
+    margin-bottom: 40px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.ellipse {
+  position: absolute;
+  transform: rotateY(90px);
+  top: 430px;
+  right: 0;
+  z-index: 1;
+}
+
+.subtitle {
+  margin: 220px 0 80px 100px;
+  max-width: 699px;
+  font: 500 80px/90px var(--font-family);
+  letter-spacing: -4px;
+  color: #18191c;
+}
+
+.carousel {
+  margin-left: 100px;
+  display: flex;
+  gap: 47px;
+}
+
+.carousel__Numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > span {
+    height: 164px;
+    width: 44px;
+    display: grid;
+    place-items: center;
+    font: 500 36px/34px var(--font-family);
+    color: #18191c;
+  }
+}
+
+.carousel__Divider {
+  height: 628px;
+
+  > span {
+    display: block;
+    height: 628px;
+    border-left: 2px solid #eceef3;
+  }
+}
+
+.carousel__Content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 164px;
+
+    > h4 {
+      font: 500 24px/34px var(--font-family);
+      color: #18191c;
+    }
+
+    > p {
+      font: 500 14px/22px var(--font-family);
+      color: #767a85;
+      max-width: 373px;
+    }
+  }
+}
