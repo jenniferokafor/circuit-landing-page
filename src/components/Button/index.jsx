@@ -7,6 +7,7 @@ const Button = ({
   icon, // icon key string from the iconMap
   iconPosition = "left", // 'left' or 'right'
   children,
+  className = "",
   ...rest
 }) => {
   const modeClass = mode === "dark" ? s.dark : s.light;
@@ -18,7 +19,10 @@ const Button = ({
   };
 
   return (
-    <button {...rest} className={`${s.button} ${modeClass} ${sizeClass}`}>
+    <button
+      {...rest}
+      className={`${s.button} ${modeClass} ${sizeClass} ${className}`}
+    >
       {icon && iconPosition === "left" && (
         <span className={`${s.icon} ${s["icon-left"]}`}>{renderIcon()}</span>
       )}

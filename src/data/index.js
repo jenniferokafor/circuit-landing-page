@@ -1,5 +1,7 @@
 export const navItems = ["Home", "Solutions", "About Us", "Resources"];
 
+export const footerNavItems = [...navItems, "Contact Us"];
+
 export const carouselItems = [
   {
     icon: () => (
@@ -101,5 +103,28 @@ export const carouselItems = [
     title: "Insights and Reporting",
     subtitle:
       "Receive in-depth analytics and reports to track performance and gain visibility into all AI-driven processes.",
+  },
+];
+
+export const pricing = [
+  {
+    key: "free",
+    name: "Free",
+    cost: "0",
+    features: ["50 Assets", "Unlimited users", "Email Support"],
+    cta: "Get Started Now",
+  },
+  {
+    key: "premium",
+    name: "Premium",
+    cost: "20",
+    features: [
+      "50 Assets",
+      "Unlimited users",
+      "Email Support",
+      "Chat Support",
+      "API & Integrations",
+    ],
+    cta: "Start 14-day Trial",
   },
 ];

@@ -4,8 +4,10 @@ import useHeaderBgScroll from "@/hooks/useHeaderBgScroll";
 
 import Button from "../Button";
 import s from "./header.module.scss";
+import { useState } from "react";
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isScrolled = useHeaderBgScroll();
   return (
     <header className={`${s.header} ${isScrolled ? s.scrolled : ""}`}>
@@ -42,7 +44,7 @@ export default function Header() {
         </svg>
         <span>circuit.</span>
       </div>
-      <nav>
+      <nav className={s.desktopNav}>
         <ul className={s.navList}>
           {navItems?.map((item, i) => (
             <li key={i}>
@@ -54,9 +56,66 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <Button mode="dark" iconPosition="left" icon="phone">
+      <Button
+        mode="dark"
+        iconPosition="left"
+        icon="phone"
+        className={s.desktopBtn}
+      >
         Contact Us
       </Button>
+      <div
+        className={s.mobileMenuIcon}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        {mobileMenuOpen ? (
+          // close icon
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M18 6L6 18" stroke="#18191c" strokeWidth="2" />
+            <path d="M6 6L18 18" stroke="#18191c" strokeWidth="2" />
+          </svg>
+        ) : (
+          // hamburger icon
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M3 6H21"
+              stroke="#18191c"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M3 12H21"
+              stroke="#18191c"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M3 18H21"
+              stroke="#18191c"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        )}
+      </div>
+      {/* mobile nav menu */}
+      <div className={`${s.mobileNav} ${mobileMenuOpen ? s.open : ""}`}>
+        <nav>
+          <ul className={s.navList}>
+            {navItems?.map((item, i) => (
+              <li key={i}>
+                <a href="/" className={i === 0 ? s.firstNavItem : ""}>
+                  {item}
+                </a>
+                {i !== navItems?.length - 1 && <span></span>}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <Button mode="dark" iconPosition="left" icon="phone">
+          Contact Us
+        </Button>
+      </div>
     </header>
   );
 }

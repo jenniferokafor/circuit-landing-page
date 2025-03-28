@@ -15,6 +15,10 @@
   &.scrolled {
     background-color: white;
   }
+
+  @media only screen and (max-width: 1024px) {
+    padding: 0 20px;
+  }
 }
 
 .logo {
@@ -60,4 +64,89 @@
   height: 32px;
   display: grid;
   place-items: center;
+}
+
+.desktopNav,
+.desktopBtn {
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+}
+
+.mobileMenuIcon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  @media only screen and (min-width: 801px) {
+    display: none;
+  }
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid #e6e6e6;
+  background-color: white;
+}
+.mobileNav.open {
+  display: flex;
+
+  .navList {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    li {
+      flex-direction: row;
+      align-items: center;
+
+      a {
+        font: 400 14px/26px var(--font-family);
+        color: #18191c;
+
+        &.firstNavItem {
+          border: none;
+        }
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    display: grid;
+    grid-template-areas:
+      "logo toggle"
+      "nav nav";
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: fit-content;
+
+    &:has(.open) {
+      background-color: #ffffff;
+    }
+  }
+
+  .logo {
+    grid-area: logo;
+    justify-self: start;
+  }
+
+  .mobileMenuIcon {
+    grid-area: toggle;
+    justify-self: end;
+  }
+
+  .mobileNav {
+    grid-area: nav;
+    width: 100%;
+  }
 }
