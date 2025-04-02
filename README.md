@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Circuit Landing Page
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Circuit Landing Page is a modern, responsive single-page website designed to showcase an AI-driven solution. Built with Next.js and SCSS, the landing page features a dynamic hero section, an interactive carousel, comprehensive pricing plans, and a compelling call-to-action—all wrapped up in a clean, contemporary design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshot
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![Circuit Landing Page Screenshot](./src/assets/demo.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Links
 
-To learn more about Next.js, take a look at the following resources:
+- **GitHub URL:** [GitHub Repository](https://github.com/jenniferokafor/circuit-landing-page)
+- **Live Site URL:** [circuit-jen-portfolio-project.netlify.app](https://circuit-jen-portfolio-project.netlify.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Built With
 
-## Deploy on Vercel
+- **Next.js:** For server-side rendering and a fast, scalable React framework.
+- **React:** For building interactive UI components.
+- **SCSS Modules:** For modular, maintainable, and responsive styling.
+- **Custom Hooks:** Leveraging hooks like `useHome` for interactive functionalities.
+- **Next/Image:** For optimized image rendering and performance.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation and Setup
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/circuit-landing-page.git
+   cd circuit-landing-page
+   ```
+
+2. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the Development Server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in Your Browser:**
+   Navigate to http://localhost:3000 to view the landing page locally.
