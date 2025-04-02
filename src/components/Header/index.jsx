@@ -1,10 +1,12 @@
 "use client";
+import { useState } from "react";
+
+import Link from "next/link";
 import { navItems } from "@/data";
 import useHeaderBgScroll from "@/hooks/useHeaderBgScroll";
 
 import Button from "../Button";
 import s from "./header.module.scss";
-import { useState } from "react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,9 +50,9 @@ export default function Header() {
         <ul className={s.navList}>
           {navItems?.map((item, i) => (
             <li key={i}>
-              <a href="/" className={i === 0 ? s.firstNavItem : ""}>
+              <Link href="/" className={i === 0 ? s.firstNavItem : ""}>
                 {item}
-              </a>
+              </Link>
               {i !== navItems?.length - 1 && <span></span>}
             </li>
           ))}
@@ -104,9 +106,9 @@ export default function Header() {
           <ul className={s.navList}>
             {navItems?.map((item, i) => (
               <li key={i}>
-                <a href="/" className={i === 0 ? s.firstNavItem : ""}>
+                <Link href="/" className={i === 0 ? s.firstNavItem : ""}>
                   {item}
-                </a>
+                </Link>
                 {i !== navItems?.length - 1 && <span></span>}
               </li>
             ))}

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
@@ -201,7 +202,7 @@ export default function Home() {
             <ul className={s.footer__NavList}>
               {footerNavItems?.map((item, i) => (
                 <li key={i}>
-                  <a href="/">{item}</a>
+                  <Link href="/">{item}</Link>
                   {i !== footerNavItems?.length - 1 && <span></span>}
                 </li>
               ))}
