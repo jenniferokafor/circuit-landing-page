@@ -1,27 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
-import { carouselItems, footerNavItems, pricing } from "@/data";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
-import heroEllipse from "@/assets/hero-ellipse.png";
 import infoImg from "@/assets/carousel-img.png";
 import ctaEllipse from "@/assets/cta-ellipse.png";
+import heroEllipse from "@/assets/hero-ellipse.png";
 import footerEllipse from "@/assets/footer-ellipse.png";
+import { carouselItems, footerNavItems, pricing } from "@/data";
 
+import useHome from "./hook";
 import s from "./page.module.scss";
 
 export default function Home() {
-  const [carouselStep, setCarouselStep] = useState(0);
-  const stepCount = carouselItems.length;
-  const stepHeight = 628 / stepCount;
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCarouselStep((prev) => (prev + 1) % stepCount);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [carouselStep, stepCount]);
+  const { carouselStep, stepCount, stepHeight, infoRef, plansRef, ctaRef } =
+    useHome();
 
   return (
     <div className={s.home}>
@@ -29,20 +21,19 @@ export default function Home() {
       <div className={s.hero}>
         <div className={s.hero__Inner}>
           <h1>
-            Data-driven
+            AI-Driven
             <br />
-            insights
+            Innovation
           </h1>
           <div className={s.heroBottom}>
             <p className={s.heroBottom__Left}>
-              Transforming tomorrow with AI-Powered intelligence to drive
-              innovation
+              Empowering the future with cutting-edge AI that sparks progress
             </p>
             <div className={s.heroBottom__Right}>
               <p>
-                Empowering businesses through data-driven insights and
-                automation to achieve unparalleled growth. We built to
-                revolutionize industries and improve productivity.
+                Accelerating business growth with AI insights and seamless
+                automation. Our solutions redefine industries while boosting
+                efficiency.
               </p>
               <div>
                 <Button
@@ -51,10 +42,10 @@ export default function Home() {
                   icon="arrow"
                   iconPosition="right"
                 >
-                  Explore Our Solutions
+                  Discover Our Solutions
                 </Button>
                 <Button size="medium" icon="logo" iconPosition="right">
-                  Book a Demo
+                  Schedule a Demo
                 </Button>
               </div>
             </div>
@@ -67,8 +58,9 @@ export default function Home() {
         alt="ellipse"
         className={s.ellipse}
       />
-      <h2 className={s.subtitle}>Rapidly changing tech landscape</h2>
-      <div className={s.info}>
+      <h2 className={s.subtitle}>Transforming Tech Landscape</h2>
+
+      <div className={`${s.info} ${s.hidden}`} ref={infoRef}>
         <div className={s.carousel}>
           <div className={s.carousel__Numbers}>
             {Array.from({ length: stepCount }).map((_, i) => (
@@ -117,13 +109,15 @@ export default function Home() {
         </div>
         <Image src={infoImg} alt="case study" className={s.info__Img} />
       </div>
-      <div className={s.plans}>
+
+      <div className={`${s.plans} ${s.hidden}`} ref={plansRef}>
         <div className={s.plans__Inner}>
           <h2>Plans & Pricing</h2>
           <p>
-            Simple, transparent pricing. No setup fees or contracts.
+            Straightforward pricing with no hidden costs. No long-term
+            commitments.
             <br />
-            Try without a credit card, cancel anytime.
+            Get started risk-free – no credit card required.
           </p>
           <div className={s.plans__Inner__Options}>
             {pricing?.map((each, i) => (
@@ -172,27 +166,29 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={s.cta}>
+
+      <div className={`${s.cta} ${s.hidden}`} ref={ctaRef}>
         <Image
           src={ctaEllipse}
           role="presentation"
           alt="ellipse"
           className={s.cta__Ellipse}
         />
-        <h2>Ready to start your AI journey with us?</h2>
+        <h2>Ready to launch your AI experience?</h2>
         <p>
-          Simple, transparent pricing. No setup fees or contracts. Try without a
-          credit card, cancel anytime.
+          Straightforward pricing with no hidden costs. Enjoy freedom with no
+          contracts or fees. Start risk-free without a credit card.
         </p>
         <div>
           <Button mode="dark" size="medium" icon="arrow" iconPosition="right">
-            Explore Our Solutions
+            Discover Our Solutions
           </Button>
           <Button mode="light" size="medium" icon="logo" iconPosition="right">
-            Book a Demo
+            Schedule a Demo
           </Button>
         </div>
       </div>
+
       <footer className={s.footer}>
         <Image
           src={footerEllipse}
@@ -245,12 +241,12 @@ export default function Home() {
             <span>circuit.</span>
           </div>
           <p className={s.footer__Inner__Text}>
-            Our AI models learn and improve over time, delivering increasingly
-            accurate results and adapting to changing trends.
+            Our AI continually evolves, delivering sharper insights and adapting
+            to emerging trends.
           </p>
         </div>
         <div className={s.footer__Inner__Email}>
-          <input placeholder="Email Address" />
+          <input placeholder="Enter Your Email" />
           <svg
             width="89"
             height="89"

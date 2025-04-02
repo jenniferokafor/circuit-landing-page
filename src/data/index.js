@@ -1,4 +1,4 @@
-export const navItems = ["Home", "Solutions", "About Us", "Resources"];
+export const navItems = ["Home", "Solutions", "Our Story", "Resources"];
 
 export const footerNavItems = [...navItems, "Contact Us"];
 
@@ -35,9 +35,9 @@ export const carouselItems = [
         />
       </svg>
     ),
-    title: "Data Collection & Analysis",
+    title: "Data Aggregation & Evaluation",
     subtitle:
-      "Our AI systems gather and process data from various sources, ensuring a comprehensive understanding.",
+      "Our intelligent systems collect and analyze information to deliver deep insights.",
   },
   {
     icon: () => (
@@ -64,9 +64,9 @@ export const carouselItems = [
         />
       </svg>
     ),
-    title: "Deployment and Monitoring",
+    title: "Implementation & Oversight",
     subtitle:
-      "The solution is deployed to seamlessly integrate into your existing systems, with ongoing monitoring to optimize performance.",
+      "Our platform integrates effortlessly with your infrastructure while continuously optimizing performance.",
   },
   {
     icon: () => (
@@ -100,9 +100,9 @@ export const carouselItems = [
         />
       </svg>
     ),
-    title: "Insights and Reporting",
+    title: "Analytics & Reporting",
     subtitle:
-      "Receive in-depth analytics and reports to track performance and gain visibility into all AI-driven processes.",
+      "Access detailed reports and analytics to monitor performance and enhance transparency across processes.",
   },
 ];
 
@@ -111,20 +111,20 @@ export const pricing = [
     key: "free",
     name: "Free",
     cost: "0",
-    features: ["50 Assets", "Unlimited users", "Email Support"],
-    cta: "Get Started Now",
+    features: ["50 Items", "Unlimited Users", "Email Support"],
+    cta: "Begin for Free",
   },
   {
     key: "premium",
     name: "Premium",
     cost: "20",
     features: [
-      "50 Assets",
-      "Unlimited users",
+      "50 Items",
+      "Unlimited Users",
       "Email Support",
-      "Chat Support",
+      "Live Chat",
       "API & Integrations",
     ],
-    cta: "Start 14-day Trial",
+    cta: "Begin 14-Day Trial",
   },
 ];
